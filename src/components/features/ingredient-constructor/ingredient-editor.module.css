@@ -1,0 +1,12 @@
+.editorContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.draggingStyle {
+    opacity: 0.5;
+}

@@ -1,0 +1,109 @@
+.card {
+    background-color: #1C1C21;
+    border-radius: 40px;
+    cursor: pointer;
+    max-width: 844px;
+    min-width: 584px;
+    text-decoration: none;
+    width: 100%;
+}
+
+.wrapper {
+    color: #F2F2F3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.iconsWrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.iconWrapper {
+    align-items: center;
+    background: #131316;
+    border: 2px solid #4C4CFF;
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: flex;
+    height: 64px;
+    justify-content: center;
+    position: relative;
+    width: 64px;
+    z-index: 6;
+}
+
+.iconWrapper:nth-of-type(2) {
+    left: 48px;
+    position: absolute;
+    z-index: 5;
+}
+
+.iconWrapper:nth-of-type(3) {
+    left: 96px;
+    position: absolute;
+    z-index: 4;
+}
+
+.iconWrapper:nth-of-type(4) {
+    left: 144px;
+    position: absolute;
+    z-index: 3;
+}
+
+.iconWrapper:nth-of-type(5) {
+    left: 192px;
+    position: absolute;
+    z-index: 2;
+}
+
+.iconWrapper:nth-of-type(6) {
+    left: 240px;
+    position: absolute;
+    z-index: 0;
+}
+
+.additionalCount {
+    background-color: rgba(28, 28, 33, 0.8);
+    position: absolute;
+    z-index: 1;
+}
+
+.additionalCountText {
+    color: #F2F2F3;
+    position: absolute;
+}
+
+.icon {
+    border-radius: 50%;
+    height: 50px;
+    object-fit: cover;
+    position: relative;
+    width: 50px;
+}
+
+.details {
+    align-items: center;
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+}
+
+.priceWrapper {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+}
+
+.pendingStatus {
+    color: #00CCCC;
+}
