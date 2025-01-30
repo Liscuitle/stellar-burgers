@@ -23,50 +23,38 @@ export const wsMiddleware = (wsActions: TWsAction): Middleware => {
       const { wsStart, wsEnd, wsOpen, wsClose, wsError, wsRequest } = wsActions;
 
       if (wsStart.match(action)) {
-        console.log(
-          `Starting WebSocket connection with URL: ${action.payload}`
-        );
-
         socket = new WebSocket(action.payload);
 
         socket.onopen = () => {
-          console.log("WebSocket connection opened");
           dispatch(wsOpen());
         };
 
-        socket.onerror = (event) => {
-          console.error("WebSocket error:", event);
+        socket.onerror = () => {
           dispatch(wsError("WebSocket encountered an error"));
         };
 
         socket.onmessage = (event) => {
-          console.log(`Raw WebSocket message received: ${event.data}`);
           try {
             const parsedData = JSON.parse(event.data);
-            console.log("Parsed WebSocket data:", parsedData);
 
             if (!parsedData.success) {
               dispatch(
                 wsError(`WebSocket message error: ${parsedData.message}`)
               );
             } else {
-              console.log("Dispatching wsRequest with data:", parsedData);
               dispatch(wsRequest(parsedData));
             }
-          } catch (error) {
-            console.error("Error parsing WebSocket message:", error);
+          } catch {
             dispatch(wsError("Error parsing message"));
           }
         };
 
-        socket.onclose = (event) => {
-          console.log(`WebSocket closed: ${event.code}`);
+        socket.onclose = () => {
           dispatch(wsClose());
         };
       }
 
       if (wsEnd.match(action)) {
-        console.log("Closing WebSocket connection...");
         if (socket) {
           socket.close();
           socket = null;
