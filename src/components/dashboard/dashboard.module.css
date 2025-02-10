@@ -1,0 +1,51 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    width: 100%;
+}
+
+.statusContainer {
+    display: flex;
+    gap: 36px;
+}
+
+.orderSection {
+    display: flex;
+    flex-direction: column;
+    width: 272px;
+    gap: 24px;
+    height: 206px;
+    overflow: hidden;
+}
+
+.completed {
+    color: #00CCCC;
+}
+
+.totalCount {
+    text-shadow:
+            0 4px 32px rgba(51, 51, 255, 0.50),
+            0 0 8px rgba(51, 51, 255, 0.25),
+            0 0 16px rgba(51, 51, 255, 0.25);
+}
+
+.orderNumbers {
+    display: grid;
+    width: 272px;
+    flex-direction: column;
+    gap: 8px;
+    grid-template-columns: repeat(auto-fit, 80px);
+}
+
+.orderNumbers::-webkit-scrollbar {
+    width: 8px;
+}
+
+.orderNumbers::-webkit-scrollbar-track {
+    background: #2F2F37;
+}
+
+.orderNumbers::-webkit-scrollbar-thumb {
+    background: #8585AD;
+}

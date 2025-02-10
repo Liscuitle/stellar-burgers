@@ -1,0 +1,36 @@
+.wrapper {
+    min-width: 650px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs {
+    display: flex;
+}
+
+.sections {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 350px);
+    overflow-y: scroll;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 272px);
+    text-align: center;
+    gap: 32px 24px;
+}
+
+.sections::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sections::-webkit-scrollbar-track {
+    background: #2F2F37;
+}
+
+.sections::-webkit-scrollbar-thumb {
+    background: #8585AD;
+}

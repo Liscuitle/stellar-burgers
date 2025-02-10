@@ -1,61 +1,56 @@
-import { ProfileUI } from '@ui-pages';
-import { FC, SyntheticEvent, useEffect, useState } from 'react';
+import styles from "../profile/profile.module.css";
+import React from "react";
+import { Location, Outlet, useLocation } from "react-router-dom";
+import NavigationLink from "../../components/navigation-link/navigation-link";
+import clsx from "clsx";
+import { fetchLogOut } from "../../services/reducers/authentication-slice";
+import { TFromLocation, useAppDispatch } from "../../utils/data-types";
 
-export const Profile: FC = () => {
-  /** TODO: взять переменную из стора */
-  const user = {
-    name: '',
-    email: ''
-  };
+export default function Profile() {
+  const location: Location<TFromLocation> = useLocation();
+  const path = location.pathname;
+  const dispatch = useAppDispatch();
 
-  const [formValue, setFormValue] = useState({
-    name: user.name,
-    email: user.email,
-    password: ''
-  });
-
-  useEffect(() => {
-    setFormValue((prevState) => ({
-      ...prevState,
-      name: user?.name || '',
-      email: user?.email || ''
-    }));
-  }, [user]);
-
-  const isFormChanged =
-    formValue.name !== user?.name ||
-    formValue.email !== user?.email ||
-    !!formValue.password;
-
-  const handleSubmit = (e: SyntheticEvent) => {
-    e.preventDefault();
-  };
-
-  const handleCancel = (e: SyntheticEvent) => {
-    e.preventDefault();
-    setFormValue({
-      name: user.name,
-      email: user.email,
-      password: ''
-    });
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormValue((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value
-    }));
+  const handleLogout = () => {
+    dispatch(fetchLogOut());
   };
 
   return (
-    <ProfileUI
-      formValue={formValue}
-      isFormChanged={isFormChanged}
-      handleCancel={handleCancel}
-      handleSubmit={handleSubmit}
-      handleInputChange={handleInputChange}
-    />
+    <section className={styles.container}>
+      <div className={styles.navContainer}>
+        <nav className={styles.navbar}>
+          <NavigationLink
+            className={clsx(styles.link, "text text_type_main-medium")}
+            link="/profile"
+          >
+            <span
+              className={
+                path === "/profile" ? styles.linkActive : styles.linkInactive
+              }
+            >
+              Профиль
+            </span>
+          </NavigationLink>
+          <NavigationLink
+            className={clsx(styles.link, "text text_type_main-medium")}
+            link="/profile/orders"
+          >
+            <span>История заказов</span>
+          </NavigationLink>
+          <NavigationLink
+            className={clsx(styles.link, "text text_type_main-medium")}
+            link="/"
+          >
+            <span onClick={handleLogout}>Выход</span>
+          </NavigationLink>
+        </nav>
+        <p className={clsx(styles.text, "text text_type_main-default mt-20")}>
+          В этом разделе вы можете изменить свои персональные данные
+        </p>
+      </div>
+      <div className={styles.content}>
+        <Outlet />
+      </div>
+    </section>
   );
-
-  return null;
-};
+}

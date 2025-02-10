@@ -1,0 +1,6 @@
+.ingredients {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: calc(100vh - 88px)
+}

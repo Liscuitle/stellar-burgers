@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Liscuitle/stellar-burgers/static/css/main.f2a295df.css",
+    "main.js": "/Liscuitle/stellar-burgers/static/js/main.ae598345.js",
+    "static/media/JetBrainsMono-Bold.woff": "/Liscuitle/stellar-burgers/static/media/JetBrainsMono-Bold.3914674f1cb2335acf26.woff",
+    "static/media/JetBrainsMono-Regular.woff": "/Liscuitle/stellar-burgers/static/media/JetBrainsMono-Regular.f52bee61d00ce995b89f.woff",
+    "static/media/JetBrainsMono-Bold.woff2": "/Liscuitle/stellar-burgers/static/media/JetBrainsMono-Bold.c232d532ea5a5189a278.woff2",
+    "static/media/JetBrainsMono-Regular.woff2": "/Liscuitle/stellar-burgers/static/media/JetBrainsMono-Regular.b60380891bcf2eb241ca.woff2",
+    "static/media/iceland.woff": "/Liscuitle/stellar-burgers/static/media/iceland.77ad7fc2baffd9305538.woff",
+    "static/media/iceland.woff2": "/Liscuitle/stellar-burgers/static/media/iceland.4ae67a017a5ff82bbbb7.woff2",
+    "static/media/not-found404.svg": "/Liscuitle/stellar-burgers/static/media/not-found404.6c62bff764c3531c3d1eebea7d654559.svg",
+    "static/media/icon-done.svg": "/Liscuitle/stellar-burgers/static/media/icon-done.d2b63362f6a68b0b5bdaf34501ff92d5.svg",
+    "index.html": "/Liscuitle/stellar-burgers/index.html",
+    "main.f2a295df.css.map": "/Liscuitle/stellar-burgers/static/css/main.f2a295df.css.map",
+    "main.ae598345.js.map": "/Liscuitle/stellar-burgers/static/js/main.ae598345.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f2a295df.css",
+    "static/js/main.ae598345.js"
+  ]
+}

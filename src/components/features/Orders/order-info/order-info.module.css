@@ -1,0 +1,79 @@
+.wrapper {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 640px;
+}
+
+.orderNumber {
+    align-self: center;
+}
+
+.statusCompleted {
+    color: #00CCCC;
+}
+
+.ingredientsList {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    gap: 16px;
+    max-height: 312px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ingredientsList::-webkit-scrollbar {
+    width: 8px;
+    background-color: #2F2F37;
+}
+
+.ingredientsList::-webkit-scrollbar-thumb {
+    background-color: #8585AD;
+}
+
+.ingredientItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 608px;
+}
+
+.ingredientInfo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.iconWrapper {
+    align-items: center;
+    background: #131316;
+    border: 2px solid #4C4CFF;
+    border-radius: 50%;
+    display: flex;
+    height: 64px;
+    justify-content: center;
+    width: 64px;
+}
+
+.ingredientIcon {
+    border-radius: 50%;
+    height: 50px;
+    object-fit: cover;
+    width: 50px;
+}
+
+.ingredientPrice {
+    align-items: center;
+    display: flex;
+    gap: 9px;
+    justify-content: end;
+}
+
+.totalWrapper {
+    display: flex;
+    justify-content: space-between;
+}
