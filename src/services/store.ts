@@ -15,7 +15,7 @@ import wsUserReducer, {
   wsUserError,
   wsUserOpen,
   wsUserRequest,
-} from "./reducers/ws-user-slice";
+} from "./reducers/wisi-person-react-slice";
 import { wsMiddleware } from "./middlewares/socket-handler";
 import { wsEnd, wsStart } from "./operations/action-handlers";
 const wsUserOrdersAction = {

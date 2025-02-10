@@ -18,7 +18,7 @@ const wsUserSlice = createSlice({
   reducers: {
     wsUserRequest: (state, action) => {
       state.wsConnected = true;
-      state.orders = action.payload.orders;
+      state.orders = action.payload.orders; // Здесь заказы должны попадать в `orders`
       state.error = undefined;
     },
     wsUserError: (state, action) => {
@@ -32,7 +32,6 @@ const wsUserSlice = createSlice({
     },
   },
 });
-
 export default wsUserSlice.reducer;
 export const { wsUserOpen, wsUserClose, wsUserError, wsUserRequest } =
   wsUserSlice.actions;
